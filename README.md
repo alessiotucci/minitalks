@@ -11,6 +11,7 @@ Here is a brief description of each function and how to use them inside this pro
 -----
 
 
+
 # signal:
 This function is used to set a signal handler for a particular signal.
 
