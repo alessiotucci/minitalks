@@ -9,6 +9,22 @@ This is version 2 of the project.
 Here is a brief description of each function and how to use them inside this project:
 
 -----
+# Bitwise operators:
+Bitwise operators are used to manipulate individual bits in binary numbers. In C programming language, there are six bitwise operators:
+
+* Bitwise AND (&)
+* Bitwise OR (|)
+* Bitwise XOR (^)
+* Bitwise NOT (~)
+* Left shift (<<)
+* Right shift (>>)
+
+
+These operators allow you to perform operations on individual bits in a binary number, such as setting or clearing a particular bit.
+
+[![BITWISE OPERATORS](https://ytcards.demolab.com/?id=WBim3afbYQw&ab_channel=PortfolioCourses&lang=en&background_color=%230d1117&title_color=%23ffffff&stats_color=%23dedede&width=250&duration= "bitwise operator")](https://youtu.be/WBim3afbYQw)
+
+-----
 
 
 
