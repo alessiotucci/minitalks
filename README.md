@@ -179,7 +179,8 @@ Here is an example of how to use the sleep function:
 ```c
 #include <unistd.h> // include the library that contains the sleep function
 
-int main() {
+int main()
+{
     printf("Going to sleep for 5 seconds...\n");
     sleep(5); // sleep for 5 seconds
     printf("I'm awake!\n");
@@ -199,7 +200,8 @@ Here is an example of how to use the usleep function:
 ```c
 #include <unistd.h> // include the library that contains the usleep function
 
-int main() {
+int main()
+{
     printf("Going to sleep for 500 milliseconds...\n");
     usleep(500000); // sleep for 500 milliseconds (500000 microseconds)
     printf("I'm awake!\n");
@@ -222,7 +224,8 @@ Here is an example of how to use the exit function:
 ```c
 #include <stdlib.h> // include the library that contains the exit function
 
-int main() {
+int main()
+{
     printf("Exiting with status code 0...\n");
     exit(0); // exit the program with status code 0 (success)
 }
