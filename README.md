@@ -168,3 +168,62 @@ Example usage:
 ```c
 pause();
 ```
+# sleep:
+This function causes the calling thread to sleep for a specified number of seconds.
+
+It takes a single argument, the number of seconds to sleep, and returns 0 if the sleep completed successfully.
+
+
+Here is an example of how to use the sleep function:
+
+```c
+#include <unistd.h> // include the library that contains the sleep function
+
+int main() {
+    printf("Going to sleep for 5 seconds...\n");
+    sleep(5); // sleep for 5 seconds
+    printf("I'm awake!\n");
+    return 0;
+}
+````
+------
+
+# usleep:
+This function causes the calling thread to sleep for a specified number of microseconds.
+
+It takes a single argument, the number of microseconds to sleep, and returns 0 if the sleep completed successfully.
+
+
+Here is an example of how to use the usleep function:
+
+```c
+#include <unistd.h> // include the library that contains the usleep function
+
+int main() {
+    printf("Going to sleep for 500 milliseconds...\n");
+    usleep(500000); // sleep for 500 milliseconds (500000 microseconds)
+    printf("I'm awake!\n");
+    return 0;
+}
+```
+
+----
+
+# exit:
+This function terminates the calling process immediately.
+
+It takes a single argument, the exit status of the process, which is a non-negative integer.
+
+A value of 0 indicates success, while non-zero values indicate an error or other status.
+
+
+Here is an example of how to use the exit function:
+
+```c
+#include <stdlib.h> // include the library that contains the exit function
+
+int main() {
+    printf("Exiting with status code 0...\n");
+    exit(0); // exit the program with status code 0 (success)
+}
+```
