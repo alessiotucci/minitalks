@@ -6,11 +6,12 @@
 /*   By: atucci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 09:56:56 by atucci            #+#    #+#             */
-/*   Updated: 2023/03/31 14:38:32 by atucci           ###   ########.fr       */
+/*   Updated: 2023/04/02 16:09:19 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
+#include "libft/libft.h"
 
 // Function to handle signal and convert received bits to characters
 void	handle_signal(int signal_number, siginfo_t *signal_info, void *unused)
