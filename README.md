@@ -26,8 +26,10 @@ These operators allow you to perform operations on individual bits in a binary n
 
 -----
 
+<details>
+ <summary><h3>SIGNAL FUNCTION EXPLAINED</h3></summary>
 
-
+    
 # signal:
 This function is used to set a signal handler for a particular signal.
 
