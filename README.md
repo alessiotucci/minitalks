@@ -215,11 +215,11 @@ It takes a single argument, the number of microseconds to sleep, and returns 0 i
 Here is an example of how to use the usleep function:
 
 ```c
-#include <unistd.h> // include the library that contains the usleep function
+#include <unistd.h> // include the library 
 
 int main()
 {
-    printf("Going to sleep for 500 milliseconds...\n");
+    printf("Go to sleep for 500 milliseconds...\n");
     usleep(500000); // sleep for 500 milliseconds (500000 microseconds)
     printf("I'm awake!\n");
     return 0;
@@ -239,7 +239,7 @@ A value of 0 indicates success, while non-zero values indicate an error or other
 Here is an example of how to use the exit function:
 
 ```c
-#include <stdlib.h> // include the library that contains the exit function
+#include <stdlib.h> // include the library
 
 int main()
 {
