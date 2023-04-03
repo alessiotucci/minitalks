@@ -194,11 +194,11 @@ It takes a single argument, the number of seconds to sleep, and returns 0 if the
 Here is an example of how to use the sleep function:
 
 ```c
-#include <unistd.h> // include the library that contains the sleep function
+#include <unistd.h> // include the library
 
 int main()
 {
-    printf("Going to sleep for 5 seconds...\n");
+    printf("Go to sleep for 5 seconds...\n");
     sleep(5); // sleep for 5 seconds
     printf("I'm awake!\n");
     return 0;
