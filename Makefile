@@ -6,7 +6,7 @@
 #    By: atucci <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/31 09:57:17 by atucci            #+#    #+#              #
-#    Updated: 2023/04/02 16:03:18 by atucci           ###   ########.fr        #
+#    Updated: 2023/04/06 15:03:22 by atucci           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,8 +35,7 @@ $(LIBFT):
 	make -C $(LIBFT_DIR)
 
 clean:
-	${RM} ${OBJ1}
-	${RM} $(OBJ2)
+	${RM} ${NAME1} ${NAME2}
 	make -C $(LIBFT_DIR) clean
 
 fclean: clean

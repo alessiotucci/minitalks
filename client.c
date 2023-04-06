@@ -6,7 +6,7 @@
 /*   By: atucci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:21:51 by atucci            #+#    #+#             */
-/*   Updated: 2023/04/06 13:22:18 by atucci           ###   ########.fr       */
+/*   Updated: 2023/04/06 14:40:06 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,10 @@ int	main(int ac, char *av[])
 
 	server_pid = ft_atoi(av[1]); // ascii to int for the first message (?)
 	message = av[2]; //  assign the second string to the previously  declared message
-	message = ft_strjoin(message, "\n\0");
-	// calling the function send_message
-	send_message(server_pid, message);
-	signal(SIGUSR1, receipt);
+	send_message(server_pid, message); // calling the function send  message
+	signal(SIGUSR1, receipt); // print  the receipt 
+	send_bit(server_pid, '\n');
+	send_bit(server_pid, '\0');
+
 	return(0);
 }
