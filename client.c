@@ -6,7 +6,7 @@
 /*   By: atucci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:21:51 by atucci            #+#    #+#             */
-/*   Updated: 2023/04/06 14:40:06 by atucci           ###   ########.fr       */
+/*   Updated: 2023/04/06 16:01:45 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	send_message(pid_t pid, char *message)
 void	receipt(int f)
 {
 	(void)f;
-	ft_printf("message receipt\n");
+	ft_printf("\033[32m%s\033[0m\n", "message receipt\n");
 }
 
 int	main(int ac, char *av[])
@@ -56,7 +56,7 @@ int	main(int ac, char *av[])
 	if (ac != 3)
 	{
 		// write something here
-		ft_printf("the fuck are you doing bro?\n Check yourself!Get a grip\n");
+		ft_printf("\033[31mthe fuck are you doing bro?\n Check yourself!Get a grip\033[31m\n");
 		return (1);
 	}
 
