@@ -6,53 +6,48 @@
 /*   By: atucci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:21:51 by atucci            #+#    #+#             */
-/*   Updated: 2023/04/02 14:36:18 by atucci           ###   ########.fr       */
+/*   Updated: 2023/04/06 13:22:18 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 #include "libft/libft.h"
 // This function sends a single bit (either 0 or 1) to the server
-void	send_bit(int server_pid, int bit)
+void	send_bit(int server_pid, int q)
 {
-// Send SIGUSR1 to the server if the bit is 1, otherwise send SIGUSR2
-	if (bit)
-		kill(server_pid, SIGUSR1);
-	else
-		kill(server_pid, SIGUSR2);
-// Wait for a short time before sending the next bit
-	usleep(100);
+	int	bit;
+
+	bit = 0;
+	while (bit < 8)
+	{
+		if (q & (1 << bit))
+			kill(server_pid, SIGUSR1);
+		else
+			kill(server_pid, SIGUSR2);
+		usleep(2000);
+		bit++;
+	}
 }
 // This function sends a message to the server by converting 
 // each character into a serives of bits
-void	send_message(int server_pid, char *message)
+void	send_message(pid_t pid, char *message)
 {
-	int	bit_index;
-	int	bit_mask;
-
-	bit_index = 0; // this is the index of the Current bit being sent
-	bit_mask = 1 << 7; // Start with the most significant bit (bit 7)
-
-// send each character in the message as a series of bits
-	while (message[bit_index / 8])
+	int	count;
+   
+	count = 0;
+	while (message[count] != '\0')
 	{
-		while (bit_mask)
-		{
-		// send the current bit to the server
-			send_bit(server_pid, message[bit_index / 8] & bit_mask);
-		// shift the bit mask to the next bit position
-			bit_mask >>= 1;
-			bit_index++;
-		}
-	// Reset the bit mask to the most significan bit
-		bit_mask = 1 << 7;
-	}
-	while (bit_mask)
-	{
-		send_bit(server_pid, 0); //Send the 0 bits to represent the null character
-		bit_mask >>= 1;
+		send_bit(pid, message[count]);
+		usleep(2000);
+		count++;
 	}
 }
+void	receipt(int f)
+{
+	(void)f;
+	ft_printf("message receipt\n");
+}
+
 int	main(int ac, char *av[])
 {
 	int		server_pid;	// this is the process ID of the process 
@@ -61,14 +56,15 @@ int	main(int ac, char *av[])
 	if (ac != 3)
 	{
 		// write something here
+		ft_printf("the fuck are you doing bro?\n Check yourself!Get a grip\n");
 		return (1);
 	}
 
 	server_pid = ft_atoi(av[1]); // ascii to int for the first message (?)
 	message = av[2]; //  assign the second string to the previously  declared message
-
+	message = ft_strjoin(message, "\n\0");
 	// calling the function send_message
 	send_message(server_pid, message);
-
+	signal(SIGUSR1, receipt);
 	return(0);
 }
