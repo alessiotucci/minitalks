@@ -9,7 +9,29 @@ This is version 2 of the project.
 Here is a brief description of each function and how to use them inside this project:
 
 -----
+
+# CLIENTS AND  SERVERS
+![image](https://user-images.githubusercontent.com/116757689/229496153-4e6f3854-1176-49c3-be70-7cf33c3c9ee1.png)
+
+
+understand the concept of clients and servers.
+
+Imagine you're at a restaurant. The waiter comes to your table and asks you what you'd like to order. You tell the waiter your order, and the waiter goes to the kitchen to get the food for you. In this scenario, you are the client, and the waiter is the server.
+
+Similarly, in the world of computing, a client is a computer program or device that requests services or resources from another program or device, which is the server. The client sends a request to the server, and the server responds with the requested information or performs the requested action.
+
+For example, when you open a web browser and type in a website address, your browser acts as a client and sends a request to the server hosting the website. The server then responds by sending the requested web page to your browser, which then displays it on your screen.
+
+In summary, clients and servers work together to allow devices and programs to communicate with each other and exchange information, much like a customer and a waiter at a restaurant.
+
+
+
+
+-----
 # Bitwise operators:
+
+![image](https://user-images.githubusercontent.com/116757689/229496625-b0a55049-5408-4b23-b572-50c1a13dc3d1.png)
+
 Bitwise operators are used to manipulate individual bits in binary numbers. In C programming language, there are six bitwise operators:
 
 * Bitwise AND (&)
@@ -26,8 +48,23 @@ These operators allow you to perform operations on individual bits in a binary n
 
 -----
 
+# ASCII encoding:
+![image](https://user-images.githubusercontent.com/116757689/229495654-72ca6e86-1892-4222-9c3d-69f2c361b43c.png)
+
+ASCII (American Standard Code for Information Interchange) is a character encoding standard used to represent text in computers. It uses 7 bits to represent 128 characters, including letters, numbers, and special characters. In C programming language, each character is represented by an integer value based on the ASCII encoding standard.
+
+-----
+# Signal handling functions:
+
+In Unix-based operating systems, signals are software interrupts delivered to a process. They are used to notify a process of an event or to request that it stop running or perform some specific action. In C programming language, signal handling functions can be used to define the behavior of a process when it receives a particular signal.
+
+-----
 
 
+<details>
+ <summary><h3>SIGNAL FUNCTION EXPLAINED</h3></summary>
+
+    
 # signal:
 This function is used to set a signal handler for a particular signal.
 
@@ -194,11 +231,11 @@ It takes a single argument, the number of seconds to sleep, and returns 0 if the
 Here is an example of how to use the sleep function:
 
 ```c
-#include <unistd.h> // include the library that contains the sleep function
+#include <unistd.h> // include the library
 
 int main()
 {
-    printf("Going to sleep for 5 seconds...\n");
+    printf("Go to sleep for 5 seconds...\n");
     sleep(5); // sleep for 5 seconds
     printf("I'm awake!\n");
     return 0;
@@ -215,11 +252,11 @@ It takes a single argument, the number of microseconds to sleep, and returns 0 i
 Here is an example of how to use the usleep function:
 
 ```c
-#include <unistd.h> // include the library that contains the usleep function
+#include <unistd.h> // include the library 
 
 int main()
 {
-    printf("Going to sleep for 500 milliseconds...\n");
+    printf("Go to sleep for 500 milliseconds...\n");
     usleep(500000); // sleep for 500 milliseconds (500000 microseconds)
     printf("I'm awake!\n");
     return 0;
@@ -239,7 +276,7 @@ A value of 0 indicates success, while non-zero values indicate an error or other
 Here is an example of how to use the exit function:
 
 ```c
-#include <stdlib.h> // include the library that contains the exit function
+#include <stdlib.h> // include the library
 
 int main()
 {
