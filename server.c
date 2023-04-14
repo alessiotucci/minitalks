@@ -6,7 +6,7 @@
 /*   By: atucci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 09:56:56 by atucci            #+#    #+#             */
-/*   Updated: 2023/04/14 13:50:29 by atucci           ###   ########.fr       */
+/*   Updated: 2023/04/14 13:53:30 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,7 @@ void	handle_signal(int signal_number, siginfo_t *signal_info, void *unused)
 	{
 		write(1, &current_char_bits, 1); // Write the character represented by the bits to the console
 		if (current_char_bits == '\0') // If the null character is received, send SIGUSR1 to indicate end of message
-		{	
-			usleep(1); // wait for a short delay GPT
 			kill(signal_info->si_pid, SIGUSR1);
-		}
 		current_char_bits = 0; // Reset the bit counter
 		current_bit_index = 0; // Reset the bit index
 	}
