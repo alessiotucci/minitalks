@@ -6,7 +6,7 @@
 /*   By: atucci <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:21:51 by atucci            #+#    #+#             */
-/*   Updated: 2023/04/06 16:01:45 by atucci           ###   ########.fr       */
+/*   Updated: 2023/04/06 18:06:13 by atucci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	send_bit(int server_pid, int q)
 			kill(server_pid, SIGUSR1);
 		else
 			kill(server_pid, SIGUSR2);
-		usleep(2000);
+		usleep(100);
 		bit++;
 	}
 }
@@ -38,7 +38,7 @@ void	send_message(pid_t pid, char *message)
 	while (message[count] != '\0')
 	{
 		send_bit(pid, message[count]);
-		usleep(2000);
+		usleep(100);
 		count++;
 	}
 }
@@ -56,7 +56,7 @@ int	main(int ac, char *av[])
 	if (ac != 3)
 	{
 		// write something here
-		ft_printf("\033[31mthe fuck are you doing bro?\n Check yourself!Get a grip\033[31m\n");
+		ft_printf("\033[31mthe fuck are you doing bro?\n Check yourself!\033[31m\n");
 		return (1);
 	}
 
